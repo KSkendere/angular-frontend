@@ -1,0 +1,58 @@
+<h2>Employee List</h2>
+<span>Sort by
+<select  [(ngModel)]="selected" (ngModelChange)="selectedOption()">    
+    <option>--Choose option--</option>
+    <option value ="1">Age</option>
+    <option value = "2">Gender</option>
+    <option value = "3">Start date</option>
+    <option value = "4">Departement</option>
+    <option value = "5">Name</option>
+</select>
+</span>
+
+
+<button (click) = "sortByName()">Sort by name</button>
+
+<table class = "table table-striped">
+<thead>
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Surname</th>
+        <th>Id number</th>
+        <th>Id_document number</th>
+        <th>Phone number</th>
+        <th>E-mail address</th>
+        <th>Address</th>
+        <th>Eduaction</th>
+        <th>Certificates</th>
+        <th>Children</th>
+        <th>Active</th>
+    </tr>
+</thead>
+<tbody>
+
+    <tr id = "employee" *ngFor = "let employee of employees"  routerLink ="/employees/{{employee.id}}" >
+    
+   
+        <td>{{employee.id}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.surname}}</td>
+        <td>{{employee.idNumber}}</td>
+        <td>{{employee.idDocumentNumber}}</td>
+        <td>{{employee.phoneNumber}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.address}}</td>
+        <td>{{employee.education}}</td>
+        <td>{{employee.certificate}}</td>
+        <td>{{employee.doesEmployeeHaveChild}}</td>
+        <td>{{employee.employeeActive}}</td>
+        
+    
+    </tr>
+ 
+</tbody>
+
+</table>
+
+
